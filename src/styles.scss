@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #575760;
+  margin-top: 30px;
+}
+ body{
+    margin: 0;
+ }
+ @media (max-width: 1399px) {
+  .footer {
+    position: relative;
+  }
+}
+
+#autor{
+  color: white;
+  text-align: center;
+}

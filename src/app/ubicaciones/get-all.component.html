@@ -1,34 +1,59 @@
 <div>
-  <button class="btn btn-success" style="margin: 1%" (click)="clickCreate()">Agregar ubicacion</button>
-  <button class="btn btn-success" style="margin: 1%" (click)="clickRefresh()">Actualizar</button>
+  <button class="btn btn-success" style="margin: 1%" (click)="clickCreate()">
+    Agregar ubicacion
+  </button>
+  <button class="btn btn-success" style="margin: 1%" (click)="clickRefresh()">
+    Actualizar
+  </button>
 </div>
 <div layout="row">
   <h1 flex="10"></h1>
 </div>
 
-<h2 class="text-center"> Lista de Ubicaciones </h2>
-<table class = "table table-striped">
-  <thead class = "table-dark">
-    <tr>
-      <th class="text-center">Id</th>
-      <th class="text-center">Nombre</th>
-      <th class="text-center">Latitud</th>
-      <th class="text-center">Longitud</th>
-      <th class="text-center">Temperatura</th>
-      <th class="text-center">Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let ubicacion of lista_ubicaciones">
-      <td class="text-center">{{ubicacion.id}}</td>
-      <td class="text-center">{{ubicacion.nombre_estacion}}</td>
-      <td class="text-center">{{ubicacion.latitud}}</td>
-      <td class="text-center">{{ubicacion.longitud}}</td>
-      <td class="text-center">{{ubicacion.temperatura}}</td>
-      <td class="text-center">
-        <button class="btn btn-primary" style="margin: 1%" (click)="clickUpdate(ubicacion)">Editar</button>
-        <button class="btn btn-danger" style="margin: 1%" (click)="clickDelete(ubicacion.id)">Eliminar</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<h2 class="text-center">Lista de Ubicaciones</h2>
+
+<div id="table_wrapper">
+  <div id="main-container">
+    <table >
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Latitud</th>
+          <th>Longitud</th>
+          <th>Temperatura</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ubicacion of lista_ubicaciones">
+          <td>{{ ubicacion.id }}</td>
+          <td>{{ ubicacion.nombre_estacion }}</td>
+          <td>{{ ubicacion.latitud }}</td>
+          <td>{{ ubicacion.longitud }}</td>
+          <td>{{ ubicacion.temperatura }}</td>
+
+          <td class="botones">
+            <button
+              class="btn btn-primary"
+              style="margin: 1%"
+              (click)="clickUpdate(ubicacion)"
+            >
+              Editar
+            </button>
+            <button
+              class="btn btn-danger"
+              style="margin: 1%"
+              (click)="clickDelete(ubicacion.id)"
+            >
+              Eliminar
+            </button>
+
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

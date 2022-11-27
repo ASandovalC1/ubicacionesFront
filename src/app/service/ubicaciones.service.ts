@@ -8,7 +8,9 @@ import { Ubicaciones } from '../models/ubicaciones';
 })
 export class UbicacionesService {
 
-  ubicacionesURL = 'http://localhost:8080/api/Ubicaciones/';
+  // ubicacionesURL = 'http://localhost:8080/api/Ubicaciones/';
+
+  ubicacionesURL = 'https://ubicacionesback-production.up.railway.app/api/Ubicaciones/';
 
   constructor(private httpClient : HttpClient) {}
 
