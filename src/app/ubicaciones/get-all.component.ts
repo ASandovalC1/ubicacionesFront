@@ -3,6 +3,7 @@ import { Route } from '@angular/router';
 import { Ubicaciones } from '../models/ubicaciones';
 import { UbicacionesService } from '../service/ubicaciones.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-all',
@@ -34,24 +35,28 @@ export class GetAllComponent {
     );
   }
 
-  private updateUbicacion(ubicacion: Ubicaciones): void{
-    console.log("updateUbicacion");
-    this.ubicacionesService.update(ubicacion).subscribe( dato => {
-      console.log(dato);
-    }
-    );
-  }
+
   private deleteUbicacion(id: number): void{
     console.log("deleteUbicacion");
-    this.ubicacionesService.delete(id).subscribe(
-      response => {
-      console.log(response);
-      this.goMain();
-    },
-    error => {
-      console.log(error);
-    }
-    );
+    Swal.fire({
+      title: '¿Estas seguro de eliminar la ubicacion ?',
+      showDenyButton: true,
+      denyButtonText: 'Cancelar',
+      confirmButtonText: `Si`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this.ubicacionesService.delete(id).subscribe(
+          response => {
+          console.log(response);
+          this.goMain();
+          },
+          error => {
+            console.log(error);
+          }
+          );
+      }
+    })
   }
 
   clickUpdate(ubicacion: Ubicaciones): void{
