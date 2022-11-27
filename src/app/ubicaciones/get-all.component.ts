@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Route } from '@angular/router';
 import { Ubicaciones } from '../models/ubicaciones';
 import { UbicacionesService } from '../service/ubicaciones.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-all',
@@ -12,7 +14,7 @@ export class GetAllComponent {
   // lista vacia de ubicaciones
   lista_ubicaciones: Ubicaciones[] = [];
 
-  constructor(private ubicacionesService : UbicacionesService) { }
+  constructor(private ubicacionesService : UbicacionesService, private router:Router) { }
 
   ngOnInit(){
     this.getUbicaciones();
@@ -30,6 +32,57 @@ export class GetAllComponent {
       console.log(this.lista_ubicaciones);
     }
     );
+  }
+
+  private updateUbicacion(ubicacion: Ubicaciones): void{
+    console.log("updateUbicacion");
+    this.ubicacionesService.update(ubicacion).subscribe( dato => {
+      console.log(dato);
+    }
+    );
+  }
+  private deleteUbicacion(id: number): void{
+    console.log("deleteUbicacion");
+    this.ubicacionesService.delete(id).subscribe(
+      response => {
+      console.log(response);
+      this.goMain();
+    },
+    error => {
+      console.log(error);
+    }
+    );
+  }
+
+  clickUpdate(ubicacion: Ubicaciones): void{
+    console.log("clickUpdate");
+    // this.updateUbicacion(ubicacion);
+  }
+
+  clickDelete(id: number): void{
+    console.log("clickDelete");
+    this.deleteUbicacion(id);
+  }
+
+  clickCreate(): void{
+    console.log("clickCreate");
+    this.router.navigate(['/ubicaciones/save']);
+  }
+
+  clickRefresh(): void{
+    console.log("clickRefresh");
+    this.goMain();
+  }
+
+  goMain(): void {
+    console.log("goMain");
+    window.location.reload()
+    // this.router.navigate(['']);
+    // setTimeout(() => {
+    //   console.log("goMain waiting");
+    //   this.router.navigate(['/ubicaciones/get']);
+    // }, 50);
+
   }
 
 }

@@ -24,13 +24,8 @@ export class UbicacionesService {
       return this.httpClient.put<any>(this.ubicacionesURL + 'update', ubicaciones);
     }
 
-    public delete(id: number): Boolean{
-      this.httpClient.delete<any>(this.ubicacionesURL + `delete/${id}`).subscribe(
-        response => {
-          console.log(response);
-        }
-      );
-      return true;
+    public delete(id: number): Observable<Boolean>{
+      return this.httpClient.delete<any>(this.ubicacionesURL + `delete/${id}`);
     }
 
 }
