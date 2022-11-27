@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { UpdateUbicacionComponent } from './ubicaciones/update-ubicacion.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ShowMapComponent } from './mapa/show-map.component';
 
 
 
@@ -22,7 +24,8 @@ import { UpdateUbicacionComponent } from './ubicaciones/update-ubicacion.compone
     AppComponent,
     GetAllComponent,
     SaveUbicacionComponent,
-    UpdateUbicacionComponent
+    UpdateUbicacionComponent,
+    ShowMapComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { UpdateUbicacionComponent } from './ubicaciones/update-ubicacion.compone
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

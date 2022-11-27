@@ -29,6 +29,10 @@ export class GetAllComponent {
       //   this.lista_ubicaciones.push(element);
       // });
       this.lista_ubicaciones = dato;
+      // for (let index = 0; index < this.lista_ubicaciones.length; index++) {
+      //   const element = this.lista_ubicaciones[index];
+      //   console.log(element);
+      // }
 
       // console.log(this.lista_ubicaciones);
     }
