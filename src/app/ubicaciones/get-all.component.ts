@@ -21,7 +21,7 @@ export class GetAllComponent {
   }
 
   private getUbicaciones(): void{
-    console.log("getUbicaciones");
+    // console.log("getUbicaciones");
     this.ubicacionesService.getUbicaciones().subscribe( dato => {
       // dato.forEach(element => {
       //   console.log(element)
@@ -29,7 +29,7 @@ export class GetAllComponent {
       // });
       this.lista_ubicaciones = dato;
 
-      console.log(this.lista_ubicaciones);
+      // console.log(this.lista_ubicaciones);
     }
     );
   }
@@ -56,7 +56,7 @@ export class GetAllComponent {
 
   clickUpdate(ubicacion: Ubicaciones): void{
     console.log("clickUpdate");
-    // this.updateUbicacion(ubicacion);
+    this.router.navigate(['/ubicaciones/update', ubicacion.id, ubicacion.nombre_estacion, ubicacion.latitud, ubicacion.longitud, ubicacion.temperatura]);
   }
 
   clickDelete(id: number): void{
