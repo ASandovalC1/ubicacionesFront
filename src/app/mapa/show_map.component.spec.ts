@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GetAllComponent } from './get-all.component';
+import { ShowMapComponent } from './show_map.component';
 
-describe('GetAllComponent', () => {
-  let component: GetAllComponent;
-  let fixture: ComponentFixture<GetAllComponent>;
+describe('ShowMapComponent', () => {
+  let component: ShowMapComponent;
+  let fixture: ComponentFixture<ShowMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetAllComponent ]
+      declarations: [ ShowMapComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GetAllComponent);
+    fixture = TestBed.createComponent(ShowMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

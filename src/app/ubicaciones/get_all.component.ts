@@ -7,8 +7,8 @@ import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-all',
-  templateUrl: './get-all.component.html',
-  styleUrls: ['./get-all.component.scss']
+  templateUrl: './get_all.component.html',
+  styleUrls: ['./get_all.component.scss']
 })
 export class GetAllComponent {
 

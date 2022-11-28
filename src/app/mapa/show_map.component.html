@@ -1,0 +1,28 @@
+<google-map width="500"
+height="500"
+[center]="markers[0].position"
+[zoom]="11"
+>
+<!-- <map-marker
+[position]="position"
+[title]="title"
+[label]="label"
+[icon]="iconBlue"
+>
+</map-marker> --> -->
+
+<!-- <map-marker  *ngFor="let marker of markersAuto"
+[position]="marker.position"
+[title]="marker.title"
+[label]="marker.label"
+></map-marker> -->
+
+<map-marker  *ngFor="let marker of markersAuto"
+[position]="marker.position"
+[title]="marker.title"
+[icon]="marker.icon"
+></map-marker>
+
+
+
+</google-map>

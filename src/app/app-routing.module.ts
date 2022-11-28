@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ShowMapComponent } from './mapa/show-map.component';
+import { ShowMapComponent } from './mapa/show_map.component';
 import { Ubicaciones } from './models/ubicaciones';
-import { GetAllComponent } from './ubicaciones/get-all.component';
-import { SaveUbicacionComponent } from './ubicaciones/save-ubicacion.component';
-import { UpdateUbicacionComponent } from './ubicaciones/update-ubicacion.component';
+import { GetAllComponent } from './ubicaciones/get_all.component';
+import { SaveUbicacionComponent } from './ubicaciones/save_ubicacion.component';
+import { UpdateUbicacionComponent } from './ubicaciones/update_ubicacion.component';
 
 const routes: Routes = [
   { path: '', component: GetAllComponent },

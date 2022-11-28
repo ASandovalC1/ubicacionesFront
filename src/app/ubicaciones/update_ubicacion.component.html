@@ -1,0 +1,118 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Actualizacion de ubicacion</h3>
+  <form (ngSubmit)="onSubmit()" #updateForm = "ngForm">
+    <!-- <div class="form-group">
+      <label> Id : </label>
+      <input type="number" class="form-control" name="id" [(ngModel)]="ubicacion.id" />
+    </div> -->
+    <div class="form-group">
+      <label> Nombre estacion: </label>
+      <input type="text"
+      class="form-control"
+      id="nombre"
+      name="nombre"
+      required
+      minlength="3"
+      maxlength="50"
+      placeholder="Digite el nombre de la estacion"
+      [(ngModel)]="ubicacion_update.nombre_estacion"
+      #nombre="ngModel"
+      />
+      <div class="alert alert-danger" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)" >
+        <div *ngIf="nombre?.errors?.['required']">
+          El nombre es requerido.
+        </div>
+        <div *ngIf="nombre?.errors?.['minlength']">
+          El nombre debe tener al menos 3 caracteres.
+        </div>
+        <div *ngIf="nombre?.errors?.['maxlength']">
+          El nombre debe tener menos de 50 caracteres.
+        </div>
+      </div>
+    </div>
+    <div layout="row">
+      <h1 flex="10"></h1>
+    </div>
+    <div class="form-group">
+      <label> Latitud: </label>
+      <input type="number"
+      class="form-control"
+      id="latitud_txt"
+      name="latitud_txt"
+      required
+      min="-180"
+      max="180"
+      placeholder="Digite la latitud"
+      [(ngModel)]="latitud"
+      #latitud_txt="ngModel"
+      />
+      <div class="alert alert-danger" *ngIf="latitud_txt?.invalid && (latitud_txt?.dirty || latitud_txt?.touched)">
+        <div *ngIf="latitud_txt?.errors?.['required']">
+          La latitud es requerida.
+        </div>
+        <div *ngIf="latitud_txt?.errors?.['min']">
+          La latitud debe ser mayor a -180.
+        </div>
+        <div *ngIf="latitud_txt?.errors?.['max']">
+          La latitud debe ser menor a 180.
+        </div>
+      </div>
+    </div>
+    <div layout="row">
+      <h1 flex="10"></h1>
+    </div>
+    <div class="form-group">
+      <label> Longitud: </label>
+      <input type="number"
+      class="form-control"
+      id="longitud_txt"
+      name="longitud_txt"
+      required
+      min="-180"
+      max="180"
+      placeholder="Digite la longitud"
+      [(ngModel)]="longitud"
+      #longitud_txt="ngModel"
+      />
+      <div class="alert alert-danger" *ngIf="longitud_txt?.invalid && (longitud_txt?.dirty || longitud_txt?.touched)">
+        <div *ngIf="longitud_txt?.errors?.['required']">
+          La longitud es requerida.
+        </div>
+        <div *ngIf="longitud_txt?.errors?.['min']">
+          La longitud debe ser mayor a -180.
+        </div>
+        <div *ngIf="longitud_txt?.errors?.['max']">
+          La longitud debe ser menor a 180.
+        </div>
+      </div>
+    </div>
+    <div layout="row">
+      <h1 flex="10"></h1>
+    </div>
+    <div class="form-group">
+      <label> Temperatura: </label>
+      <input type="number"
+      class="form-control"
+      id="temperatura_txt"
+      name="temperatura_txt"
+      required
+      placeholder="Digite la temperatura"
+      [(ngModel)]="ubicacion_update.temperatura"
+      #temperatura_txt="ngModel"
+      />
+      <div class="alert alert-danger" *ngIf="temperatura_txt?.invalid && (temperatura_txt?.dirty || temperatura_txt?.touched)">
+        <div *ngIf="temperatura_txt?.errors?.['required']">
+          La temperatura es requerida.
+        </div>
+      </div>
+    </div>
+    <div layout="row">
+      <h1 flex="10"></h1>
+    </div>
+    <div>
+      <button type="submit" style="margin: 5%" class="btn btn-success" [disabled]="!updateForm.form.valid">Guardar</button>
+      <button type="button" style="margin: 5%" class="btn btn-danger" (click)="clickCancel()">Cancelar</button>
+    </div>
+
+  </form>
+</div>
